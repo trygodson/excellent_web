@@ -19,7 +19,7 @@ const envKeys = Object?.keys(envVars).reduce((prev, next) => {
 
 module.exports = (env = {}) => {
   const isProduction = env.NODE_ENV === 'production';
-  const apiUrl = envVars?.REACT_APP_BACKEND_URL;
+  const apiUrl = envVars?.REACT_APP_BACKEND_URL ?? 'http://128.199.89.42:7005';
   return {
     mode: isProduction ? 'production' : 'development',
     entry: {
